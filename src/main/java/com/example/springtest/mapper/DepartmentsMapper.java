@@ -1,10 +1,8 @@
 package com.example.springtest.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.example.springtest.pojo.Departments;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
-
-import java.util.List;
 
 /**
  * @className: DepartmentsMapper
@@ -13,8 +11,6 @@ import java.util.List;
  * @date: 2022/10/7
  **/
 @Mapper
-public interface DepartmentsMapper {
+public interface DepartmentsMapper extends BaseMapper<Departments> {
 
-    @Select("SELECT dept_no,dept_name from departments")
-    List<Departments> findAll();
 }

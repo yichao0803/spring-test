@@ -1,11 +1,13 @@
 package com.example.springtest.controller;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.example.springtest.mapper.DepartmentsMapper;
 import com.example.springtest.pojo.Departments;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -18,8 +20,8 @@ import java.util.List;
 @RequestMapping("{api.prefix}")
 public class IndexController  {
 
-//    @Autowired
-//    DepartmentsMapper departMentsMapper;
+    @Resource
+    DepartmentsMapper departMentsMapper;
 
     // http://localhost:8080/spring-test/index
     @RequestMapping("/index")
@@ -28,9 +30,10 @@ public class IndexController  {
         String result="hello world";
         return result;
     }
+    @RequestMapping("/dept-ments")
+    public List<Departments> departMentsList(){
+        QueryWrapper<Departments> queryWrapper=new QueryWrapper<>();
 
-//    @RequestMapping("/dept-ments")
-//    public List<Departments> departMentsList(){
-//        return departMentsMapper.findAll();
-//    }
+        return departMentsMapper.selectList(queryWrapper);
+    }
 }
