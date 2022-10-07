@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    url: jdbc:mysql://192.168.12.149:3306/SOCKS
+    username: root
+    password: kd!253
+
+api.prefix: spring-test
