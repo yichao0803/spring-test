@@ -72,6 +72,15 @@
             <artifactId>hutool-all</artifactId>
             <version>5.8.2</version>
         </dependency>
+        <dependency>
+            <groupId>p6spy</groupId>
+            <artifactId>p6spy</artifactId>
+            <version>3.8.7</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
         <!-- zk 连接客户端 end -->
 
     </dependencies>

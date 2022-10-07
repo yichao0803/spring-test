@@ -1,8 +1,12 @@
 package com.example.springtest.controller;
 
-import org.springframework.web.bind.annotation.Mapping;
+import com.example.springtest.mapper.DepartmentsMapper;
+import com.example.springtest.pojo.Departments;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 /**
  * @className: IndexController
@@ -14,6 +18,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("{api.prefix}")
 public class IndexController  {
 
+//    @Autowired
+//    DepartmentsMapper departMentsMapper;
+
     // http://localhost:8080/spring-test/index
     @RequestMapping("/index")
     public String index(){
@@ -21,4 +28,9 @@ public class IndexController  {
         String result="hello world";
         return result;
     }
+
+//    @RequestMapping("/dept-ments")
+//    public List<Departments> departMentsList(){
+//        return departMentsMapper.findAll();
+//    }
 }
